@@ -24,5 +24,13 @@
   "bugs": {
     "url": "https://github.com/adriaan-pelzer/deconstruct-item-store/issues"
   },
-  "homepage": "https://github.com/adriaan-pelzer/deconstruct-item-store#readme"
+  "homepage": "https://github.com/adriaan-pelzer/deconstruct-item-store#readme",
+  "dependencies": {
+    "aws-sdk": "^2.87.0",
+    "highland": "^2.11.1",
+    "md5": "^2.2.1",
+    "ramda": "^0.24.1",
+    "redis": "^2.7.1",
+    "uuid": "^3.1.0"
+  }
 }
