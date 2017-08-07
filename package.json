@@ -1,6 +1,6 @@
 {
   "name": "deconstruct-item-store",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A deconstruct-api module that enables a fast schema-less JSON object store for reverse-chronologically-ordered objects",
   "main": "index.js",
   "scripts": {
