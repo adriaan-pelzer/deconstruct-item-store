@@ -46,7 +46,6 @@ module.exports = ( { config, valueProcessor, test, testHelpers, response } ) => 
     deleteItem: ( [ type, id ] ) => {
         var rc = true;
         rc = rc && testHelpers.equals ( `generic ${test.method} ${type} response.list.items-${type}`, response.list[`items-${type}`], 1 );
-        rc = rc && testHelpers.equals ( `generic ${test.method} ${type} response.removedlist.items-${type}-removed`, response.removedlist[`items-${type}-removed`], 1 );
         return rc;
     },
     getItem: ( [ type, id ] ) => {
