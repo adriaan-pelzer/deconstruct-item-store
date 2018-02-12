@@ -119,7 +119,7 @@ module.exports = [
                 rc = rc && testHelpers.equals ( `getItems standardItem response[${idx}].item`, item.item, R.reverse ( context.savedItems )[idx] );
             } );
             context.items = response;
-            context.itemIds = R.map ( R.pick ( [ 'id', 'iid', 'type', 'lastModifiedTime' ] ), response );
+            context.itemIds = R.map ( R.pick ( [ 'id', 'iid', 'type', 'lastModifiedTime', 'item' ] ), response );
             return rc;
         }
     },
@@ -167,7 +167,7 @@ module.exports = [
                 rc = rc && testHelpers.equals ( `getItems standardItem response[${idx}].item`, item.item, R.reverse ( context.savedItems )[idx] );
             } );
             context.items = response;
-            context.itemIds = R.map ( R.pick ( [ 'id', 'iid', 'type', 'lastModifiedTime' ] ), response );
+            context.itemIds = R.map ( R.pick ( [ 'id', 'iid', 'type', 'lastModifiedTime', 'item' ] ), response );
             return rc;
         }
     },
@@ -216,7 +216,7 @@ module.exports = [
                 rc = rc && testHelpers.equals ( `getItems standardItem response[${idx}].item`, item.item, savedItem );
             } );
             context.items = response;
-            context.itemIds = R.map ( R.pick ( [ 'id', 'iid', 'type', 'lastModifiedTime' ] ), response );
+            context.itemIds = R.map ( R.pick ( [ 'id', 'iid', 'type', 'lastModifiedTime', 'item' ] ), response );
             return rc;
         }
     },

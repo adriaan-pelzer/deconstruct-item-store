@@ -56,8 +56,8 @@ module.exports = ( { config, valueProcessor, test, testHelpers, response } ) => 
         config.typeConfigs[type].metadataPaths.forEach ( path => {
             const key = R.last ( path.path );
             const value = valueProcessor ( R.path ( path.path, response.item ), path.attrs || [] );
-            if ( ! R.contains ( key, defaultAttrs ) ) {
-                rc = rc && testHelpers.equals ( `generic ${test.method} ${type} response.item.${key}`, response.item[key], value );
+            if ( ! R.contains ( key, defaultAttrs ) && ! path.type ) {
+                rc = rc && testHelpers.equals ( `generic ${test.method} ${type} response.${key}`, response[key], value );
             }
         } );
         return rc;
