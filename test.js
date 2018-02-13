@@ -92,7 +92,9 @@ const run = done => {
             }, require ( testModule ) )
         };
 
-        itemStore.loadConfig ( test.config );
+        if ( test.config ) {
+            itemStore.loadConfig ( test.config );
+        }
 
         return H ( test.tests )
             .flatMap ( tst => {

@@ -31,6 +31,7 @@ module.exports = ( { config, valueProcessor, test, testHelpers, response } ) => 
             const redisKey = `${response.iid}-${path.path.join ( '-' )}`;
             const atomicValue = R.path ( path.path, item ) && R.flatten ( [ R.path ( path.path, item ) ] );
             const getExpectedCard = ( type, value ) => {
+                if ( type === 'key' ) { return 'OK'; }
                 if ( R.type ( value ) !== 'Array' ) { return 0; }
                 if ( type === 'hll' ) { return 1; }
                 if ( type === 'set' ) { return R.uniq ( value ).length; }

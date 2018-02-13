@@ -29,6 +29,8 @@ module.exports = {
         },
         'atomicItem': {
             metadataPaths: [
+                { path: [ 'key' ], type: 'key' },
+                { path: [ 'dehydratedKey' ], type: 'key', attrs: [ 'dehydrated' ] },
                 { path: [ 'list' ], type: 'list' },
                 { path: [ 'dehydratedList' ], type: 'list', attrs: [ 'dehydrated' ] },
                 { path: [ 'set' ], type: 'set' },

@@ -7,6 +7,8 @@ const context = {
     items: {
         plain: {
             atomicAttrs: {
+                key: 'hallo',
+                dehydratedKey: 'bye',
                 list: [ '0', '1', '2', '3' ],
                 dehydratedList: [ 'a', 'b', 'c', 'd' ],
                 set: [ '00', '11', '22', '33' ],
@@ -36,6 +38,12 @@ const context = {
     },
     compare: ( method, testHelpers, atomicAttrs, response ) => {
         var rc = true;
+        rc = rc && testHelpers.equals ( `${method} atomicItem response.item.key`, response.item.key, atomicAttrs.key );
+        rc = rc && testHelpers.equals ( `${method} atomicItem response.item.dehydratedKey`, response.item.dehydratedKey, atomicAttrs.dehydratedKey ? {
+            type: 'key',
+            attrs: [ 'dehydrated' ],
+            cardinality: 1
+        } : undefined );
         rc = rc && testHelpers.equals ( `${method} atomicItem response.item.list`, response.item.list, atomicAttrs.list );
         rc = rc && testHelpers.equals ( `${method} atomicItem response.item.dehydratedList`, response.item.dehydratedList, atomicAttrs.dehydratedList ? {
             type: 'list',
