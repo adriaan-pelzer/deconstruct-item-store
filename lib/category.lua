@@ -65,6 +65,6 @@ for i = 5, #ARGV, 1 do
     table.insert(inter,unionKey)
 end
 zInterStore(interKey,inter)
-local result=zRevRangeBySCore('tmp',before,after,offset,count)
+local result=zRevRangeByScore('tmp',before,after,offset,count)
 doRedisCall('del',del)
 return result
